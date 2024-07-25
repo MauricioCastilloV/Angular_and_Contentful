@@ -1,10 +1,16 @@
 # ContentfulAngular18
 
 ## Commands used
+### Before start (if not have created a project, follow these steps)
+1. Create a Angular Project using v18 (we don't specify a global cli version and that's why we type "npx")
+``npx @angular/cli@18 new *<project_name>*``
+    - You must be sure if you want to install "CSS" or options, and "SSR" in your project. 
+2. Start your project using "npx" to be sure if everything is fine.
+``npx ng serve``
+
 ### Steps
-```
-    1) To start fetching data from Contentful, start by creating an Angular service via the CLI. The g is shorthand for the generate command.
-```
+1. To start fetching data from Contentful, start by creating an Angular service via the CLI. The g is shorthand for the generate command.
+``npx ng g service contentful``
 
 
 
