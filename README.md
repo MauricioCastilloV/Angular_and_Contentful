@@ -99,6 +99,45 @@ export const routes: Routes = [
 
 ```
 
+14. Check to have the same command lines inside "home.component.ts" as below.
+```
+import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from '../../services/contentful.service';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';  // Importa CommonModule
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule
+  ],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
+export class HomeComponent implements OnInit{
+
+  constructor(private contentfulService: ContentfulService) {}
+
+  blogPosts$ : Observable<any> | undefined;
+
+  ngOnInit(): void {
+    this.blogPosts$ = this.contentfulService.getAllEntries();
+  }
+
+}
+```
+
+15. Check to have the same command lines inside "home.component.html" as below.
+```
+<main>
+    <pre>
+        @if (blogPosts$ | async; as blogPosts){
+            {{blogPosts | json}}
+        }
+    </pre>
+</main>
+```
+
 ## Angular DOCS
 ``This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.``
 ### Development server
