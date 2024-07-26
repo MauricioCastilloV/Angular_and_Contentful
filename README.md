@@ -83,12 +83,7 @@ export class ContentfulService {
 11. After that, let's make an example about how to get the data. So let's create a "Home" component.
 ``npx ng g component Home``
 
-12. Then, make sure to have the same command lines inside "home.component.ts".
-```
-
-```
-
-13. We've also created a "path" for HomeComponent, so make sure to have the same in "app.route.ts" as below example.
+12. We've also created a "path" for HomeComponent, so make sure to have the same in "app.route.ts" as below example.
 ```
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -99,7 +94,7 @@ export const routes: Routes = [
 
 ```
 
-14. Check to have the same command lines inside "home.component.ts" as below.
+13. Check to have the same command lines inside "home.component.ts" as below.
 ```
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../services/contentful.service';
@@ -127,7 +122,7 @@ export class HomeComponent implements OnInit{
 }
 ```
 
-15. Check to have the same command lines inside "home.component.html" as below.
+14. Check to have the same command lines inside "home.component.html" as below.
 ```
 <main>
     <pre>
