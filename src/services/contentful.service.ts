@@ -18,5 +18,6 @@ export class ContentfulService {
   getAllEntries() {
     const promise = this.client.getEntries()
     return from(promise);
+    // return this.client.getEntries().then(entries => console.log(entries));
   }
 }

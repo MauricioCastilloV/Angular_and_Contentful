@@ -54,7 +54,50 @@ export const environment = {
 ```
     - If 'environment.ts' is not imported, remember to do it manually by: "import { environment } from '../environments/environment';" 
 
-10. 
+10. Then in your contentful.service.ts make sure to have exactly the next command lines.
+```
+import { Injectable } from '@angular/core';
+import { createClient, Entry } from 'contentful';
+import { environment } from '../environments/environment';
+import { from } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ContentfulService {
+
+  constructor() { }
+
+  private client = createClient({
+    space: environment.spaceId,
+    accessToken: environment.accessToken,
+  });
+
+  getAllEntries() {
+    const promise = this.client.getEntries()
+    return from(promise);
+  }
+}
+```
+
+11. After that, let's make an example about how to get the data. So let's create a "Home" component.
+``npx ng g component Home``
+
+12. Then, make sure to have the same command lines inside "home.component.ts".
+```
+
+```
+
+13. We've also created a "path" for HomeComponent, so make sure to have the same in "app.route.ts" as below example.
+```
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+export const routes: Routes = [
+    {path: 'home', component: HomeComponent}
+];
+
+```
 
 ## Angular DOCS
 ``This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.``
